@@ -9,8 +9,8 @@ function App() {
 
   
   const addTask = () => {
-    if (newTask.trim()) {
-      setTasks([...tasks, newTask.trim()]);
+    if (newTask) {
+      setTasks([...tasks, newTask]);
       setNewTask("");
     }
   };
@@ -39,7 +39,7 @@ function App() {
   
   const sortTasks = () => {
     const sortedTasks = [...tasks].sort((a, b) =>
-      a.localeCompare(b, undefined, { sensitivity: "base" })
+      a.localeCompare(b)
     );
     setTasks(sortedTasks);
   };
@@ -82,6 +82,7 @@ function App() {
       </ul>
     </div>
   );
+
 }
 
 export default App;
